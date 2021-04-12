@@ -1,0 +1,313 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 1000,
+	"windowMaxWidth": 32000,
+	"windowMinHeight": 620,
+	"windowMaxHeight": 32000,
+	"width": 1200,
+	"height": 760,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tabs": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 1160,
+					"height": 720,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "tabs",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Tabs.4dm"
+				}
+			}
+		},
+		{
+			"objects": {
+				"WParea2": {
+					"type": "write",
+					"top": 100,
+					"left": 80,
+					"width": 1040,
+					"height": 250,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"enterable": false,
+					"focusable": false,
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"showSelection": true,
+					"showHorizontalRuler": false,
+					"showVerticalRuler": false,
+					"layoutMode": "embedded",
+					"borderStyle": "none",
+					"events": []
+				},
+				"Image10": {
+					"type": "picture",
+					"top": 395,
+					"left": 420,
+					"width": 360,
+					"height": 276,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image10.png"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Group Box2": {
+					"type": "groupBox",
+					"text": "Docx Import log",
+					"top": 330,
+					"left": 730,
+					"width": 430,
+					"height": 290,
+					"sizingX": "move",
+					"sizingY": "grow"
+				},
+				"Group Box": {
+					"type": "groupBox",
+					"text": "docx file samples",
+					"top": 50,
+					"left": 730,
+					"width": 430,
+					"height": 270,
+					"sizingX": "move",
+					"sizingY": "fixed"
+				},
+				"WParea": {
+					"type": "write",
+					"top": 150,
+					"left": 40,
+					"width": 670,
+					"height": 570,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"dpi": 0,
+					"borderStyle": "none",
+					"method": "ObjectMethods/WParea.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onSelectionChange",
+						"onAfterEdit"
+					]
+				},
+				"WPtoolbar": {
+					"type": "subform",
+					"top": 60,
+					"left": 40,
+					"width": 670,
+					"height": 90,
+					"sizingX": "grow",
+					"detailForm": "WP_Toolbar",
+					"focusable": false,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable"
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "Trace Code",
+					"top": 710,
+					"left": 993,
+					"width": 167,
+					"height": 18,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace",
+					"sizingX": "move",
+					"sizingY": "move"
+				},
+				"LB1": {
+					"type": "listbox",
+					"left": 730,
+					"top": 345,
+					"width": 430,
+					"height": 260,
+					"events": [
+						"onMouseEnter",
+						"onMouseLeave",
+						"onMouseMove"
+					],
+					"listboxType": "collection",
+					"dataSource": "WParea.importLog.user",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"rowHeight": "20px",
+					"hideFocusRing": true,
+					"fill": "transparent",
+					"horizontalLineStroke": "#b1c4dd",
+					"verticalLineStroke": "transparent",
+					"borderStyle": "none",
+					"method": "ObjectMethods/LB1.4dm",
+					"sizingX": "move",
+					"sizingY": "grow",
+					"scrollbarVertical": "automatic",
+					"selectionMode": "none",
+					"showFooters": false,
+					"columns": [
+						{
+							"header": {
+								"text": "Header1",
+								"name": "Entête1"
+							},
+							"name": "Colonne1",
+							"footer": {
+								"name": "Pied1"
+							},
+							"dataSource": "getIcon(This:C1470.type)",
+							"width": 60,
+							"dataSourceTypeHint": "picture",
+							"pictureFormat": "proportionalCenter",
+							"minWidth": 60,
+							"maxWidth": 60
+						},
+						{
+							"header": {
+								"name": "Entête2",
+								"text": "Entête2"
+							},
+							"name": "Colonne2",
+							"footer": {
+								"name": "Pied2"
+							},
+							"width": 580,
+							"dataSource": "This:C1470.messageShort",
+							"verticalAlign": "middle",
+							"fontSize": 14,
+							"stroke": "#696969",
+							"rowHeightAuto": false
+						}
+					]
+				},
+				"LB2": {
+					"type": "listbox",
+					"left": 740,
+					"top": 70,
+					"width": 408,
+					"height": 240,
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.documents",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"rowHeight": "20px",
+					"hideFocusRing": true,
+					"fill": "transparent",
+					"horizontalLineStroke": "#b1c4dd",
+					"verticalLineStroke": "transparent",
+					"borderStyle": "none",
+					"sizingX": "move",
+					"sizingY": "fixed",
+					"scrollbarVertical": "automatic",
+					"selectionMode": "single",
+					"showFooters": false,
+					"currentItemSource": "Form:C1466.currentDocument",
+					"currentItemPositionSource": "Form:C1466.currentPosition",
+					"selectedItemsSource": "Form:C1466.selectedDocuments",
+					"method": "ObjectMethods/LB2.4dm",
+					"columns": [
+						{
+							"header": {
+								"name": "Entête4",
+								"text": "Entête2"
+							},
+							"name": "Colonne4",
+							"footer": {
+								"name": "Pied4"
+							},
+							"width": 580,
+							"dataSource": "This:C1470.value",
+							"verticalAlign": "middle",
+							"fontSize": 14,
+							"stroke": "#696969",
+							"rowHeightAuto": false
+						}
+					]
+				},
+				"Zone de saisie": {
+					"type": "input",
+					"left": 810,
+					"top": 630,
+					"width": 350,
+					"height": 60,
+					"dataSource": "Form:C1466.messageLong",
+					"enterable": false,
+					"focusable": false,
+					"fontSize": 18,
+					"borderStyle": "none",
+					"fill": "transparent",
+					"stroke": "#696969",
+					"sizingX": "move",
+					"sizingY": "move"
+				},
+				"Zone de saisie1": {
+					"type": "input",
+					"left": 730,
+					"top": 630,
+					"width": 62,
+					"height": 62,
+					"dataSource": "Form:C1466.icon",
+					"enterable": false,
+					"focusable": false,
+					"fontSize": 14,
+					"borderStyle": "none",
+					"fill": "transparent",
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSourceTypeHint": "picture",
+					"pictureFormat": "proportionalCenter",
+					"contextMenu": "none"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 1013,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"menuBar": "Menu Bar #1"
+}
