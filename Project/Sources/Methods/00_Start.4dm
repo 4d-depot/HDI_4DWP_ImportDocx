@@ -31,7 +31,7 @@ Case of
 		$options.blog:="blog.4d.com"
 		$options.info:="4D Write Pro feature"  //ex : "4D View Pro feature"
 		
-		$options.minimumVersion:="1860"  // 1860 means 18R6   1701 means 17.1 (do not use !)
+		$options.minimumVersion:="1900"  // 1920 means 19R2   1901 means 19.1 (do not use !)
 		
 		$options.license:=4D Write license:K44:2  // IF ANY NEEDED
 		
